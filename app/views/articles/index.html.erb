@@ -1,0 +1,7 @@
+<h1> All Articles </h1>
+
+<%= render partial: "display" %>
+
+<% if logged_in? %>
+<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+<% end %>

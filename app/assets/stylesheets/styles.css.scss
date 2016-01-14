@@ -1,0 +1,61 @@
+$primary_color: #AAA;
+*,
+*:before,
+*:after{
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  background-color: $primary_color;
+  font: {
+    family: Verdana, Helvetica, Arial;
+    size: 14px;
+  }
+}
+
+a {
+  color: #0000FF;
+  img {
+    border: none;
+  }
+}
+
+#container {
+  margin-left:5px;
+  background: #fff;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+  width:87%;
+  display: inline-block;
+}
+
+#content {
+  clear: both;
+  padding-top: 20px;
+}
+
+#menu {
+  margin: 0 auto;
+  background: #fff;
+  padding: 10px 25px;
+  border: solid 1px black;
+  margin-top: 20px;
+  width:12%;
+  display: inline-block;
+  top: 0;
+  float: left;
+}
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  clear: both;
+  *zoom: 1;
+}

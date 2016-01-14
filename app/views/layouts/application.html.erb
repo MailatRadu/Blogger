@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blogger</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <p class="flash">
+    <%= flash.notice %>
+  </p>
+  <div id="menu" class="group">
+    <h4>Articles</h4>
+      <ul>
+        <li>
+          <%= link_to "All Articles", articles_path %>
+        </li>
+        <li>
+          <%= link_to "Most Popular", popular_path %>
+        </li>
+      </ul>
+    <br />
+    <h5>Monthly List</h5>
+    <br />
+    <ul>
+      <li>
+        <%= link_to "January", monthly_path(1) %>
+      </li>
+      <li>
+        <%= link_to "February", monthly_path(2) %>
+      </li>
+      <li>
+        <%= link_to "March", monthly_path(3) %>
+      </li>
+      <li>
+        <%= link_to "April", monthly_path(4) %>
+      </li>
+      <li>
+        <%= link_to "May", monthly_path(5) %>
+      </li>
+      <li>
+        <%= link_to "June", monthly_path(6) %>
+      </li>
+      <li>
+        <%= link_to "July", monthly_path(7) %>
+      </li>
+      <li>
+        <%= link_to "August", monthly_path(8) %>
+      </li>
+      <li>
+        <%= link_to "September", monthly_path(9) %>
+      </li>
+      <li>
+        <%= link_to "October", monthly_path(10) %>
+      </li>
+      <li>
+        <%= link_to "November", monthly_path(11) %>
+      </li>
+      <li>
+        <%= link_to "December", monthly_path(12) %>
+      </li>
+    </ul>
+    <br />
+  </div>
+  <div id="container">
+    <div id="content">
+      <%= yield %>
+      <hr>
+      <h6>
+        <% if logged_in? %>
+          <%= "Logged in as #{current_user.email}" %>
+          <%= link_to "(logout)", logout_path %>
+        <% else %>
+          <%= link_to "login", login_path %>
+        <% end %>
+      </h6>
+    </div>
+  </div>
+</body>
+
+</html>
